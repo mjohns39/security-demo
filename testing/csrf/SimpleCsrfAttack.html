@@ -1,0 +1,39 @@
+<!--
+  A simple html file that uses ajax and jQuery to test if your rest endpoint 
+  will send a response when this file is opened.
+  
+  Test with different browsers (ahem IE).
+  
+  Set YOUR rest api endpoint where it say's "CHANGE-ME"
+  
+  Please use responsibly :)
+  -->
+
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <script>
+    var apiUrl = 'CHANGE-ME';
+    
+    $(document).ready(function() {
+      $.ajax({
+        url: apiUrl,
+        type: 'GET',
+        headers: {
+          
+        },
+        success: function(data, textStatus, response) {
+          alert("Oh no!  You shouldn't have gotten a response :(");
+        },
+        error: function(e) {
+          alert("Great!  Your server didn't send a response :)");
+        }        
+      });
+      return false;
+    });
+      
+    </script>
+  </body>
+</html>
